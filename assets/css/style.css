@@ -11,7 +11,7 @@
     src: url(../fonts/Nunito-ExtraBold800.ttf);
 }
 
-
+ 
 :root {
     --header-text-color: #00FFF5;
     --section-text-color:#00FFF5;
@@ -47,6 +47,16 @@ button {
 body {
     background: #03102C;
 }
+
+
+
+
+
+
+
+
+
+
 .header-wrapper {
     display: flex;
     justify-content: space-between;
@@ -66,6 +76,10 @@ body {
     text-transform: capitalize;
     cursor: pointer;
 }
+.header-nav-li-conteiner ul li a:hover {
+    text-shadow: 2px 0px 20px #00fff5;
+    transform: scale(1.1);
+}
 .header-portfolio-conteiner ul a {
     font-family: 'Nunito-ExtraBold800', sans-serif;
     color: var(--header-text-color);
@@ -74,6 +88,10 @@ body {
     line-height: 41px;
     text-transform: uppercase;
     cursor: pointer;
+}
+.header-portfolio-conteiner ul a:hover {
+    text-shadow: 2px 0px 20px #00fff5;
+    transform: scale(1.1);
 }
 .resume-conteiner a {
     font-family: 'Nunito-ExtraBold800', sans-serif;
@@ -87,6 +105,34 @@ body {
     border-radius: 30px;
     padding: 15px 30px;
 }
+.resume-conteiner a:hover {
+    text-shadow: 2px 0px 20px #00fff5;
+    transform: scale(1.1);
+}
+/* burger bar */
+.hamburger {
+    display: none;
+    cursor: pointer;
+}
+.line {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: var(--header-text-color);
+}
+
+
+
+
+
+
+
+
+
+
 /* section about me */
 .about-me-section {
     margin: 168px 0 150px 0;
@@ -102,12 +148,15 @@ body {
 .profile-img-conteiner img {
     border-radius: 30px;
     padding: 30px;
+    transition: 0.5s;
+    transition-timing-function: ease-out;
 }
 .profile-img-conteiner img:hover {
     transform: scale(1.1);
 }
 .about-me-text-conteiner {
     padding: 126px 104px 0px 84px;
+    position: relative;
 }
 .about-me-text-conteiner span {
     font-family: 'Nunito-Medium500', sans-serif;
@@ -127,11 +176,14 @@ body {
     text-transform: initial;
 }
 .icon-contener {
-    padding-top: 300px;
+    display: flex;
+    flex-direction: column;
+    right: 40px;
+    top: 270px;
+    row-gap: 24px;
+    position: absolute;
 }
-.icon-contener a img {
-    padding-bottom: 24px;
-}
+
 .icon-contener div {
     border-right: 1px solid #0066FF;
     height: 300px;
@@ -169,3 +221,141 @@ body {
     color: #0066FF;
 }
 
+
+
+
+/* scroll */
+html {
+    scroll-behavior: smooth;
+}
+.to-top {
+    background: wheat;
+    position: fixed;
+    bottom: 16px;
+    right: 32px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    color: black;
+    text-decoration: none;
+    opacity: 0;
+    pointer-events: none;
+    transition: all .4s;
+}
+.to-top.active {
+    bottom: 32px;
+    pointer-events: auto;
+    opacity: 1;
+}
+.to-top svg {
+    rotate: 180deg;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 1040px) {
+    
+    .resume-conteiner {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+    }
+    .hamburger {
+      display: inline-block;
+      /* position: absolute; */
+      /* margin-left: 50%;
+      margin-top: -17px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start; */
+    }
+    .hamburger.active .line:nth-child(2) {
+      opacity: 0;
+    }
+    .hamburger.active .line:nth-child(1) {
+      transform: translateY(8px) rotate(45deg);
+    }
+    .hamburger.active .line:nth-child(3) {
+      transform: translateY(-8px) rotate(-45deg);
+    }
+    .header-nav-li-conteiner {
+      position: fixed;
+      right: -100%;
+      top: 100px;
+      background-color:#FFFFFF;
+      width: 200px;
+      border-radius: 8px 0px 0px 8px;
+      text-align: center;
+      transition: 0.3s;
+      padding: 50px 0px 40px 0px;
+    }
+    .header-nav-li-conteiner ul{
+      flex-direction: column;
+      row-gap: 12px;
+    }
+    .header-nav-li-conteiner.active {
+      right: 0;
+    }
+    
+    /* about me */
+    .profile-img-conteiner {
+        max-width: 390px;   
+    }
+    .about-me-section-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 30px;
+    }
+    .about-me-more-button-conteiner {
+        display: none;
+    }
+    .about-me-text-conteiner {
+        padding: 100px 104px 0px 84px;
+    }
+    .icon-contener {
+        display: flex;
+        flex-direction: row;
+        right: 0px;
+        top: 22px;
+        column-gap: 18px;
+        position: inherit;
+    }
+    .icon-contener div {
+        display: none;
+    }
+}
