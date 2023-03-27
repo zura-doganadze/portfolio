@@ -1,4 +1,4 @@
-// sctoll top
+// scrtoll top
 const toTop = document.querySelector(".to-top");
 
 window.addEventListener("scroll", () => {

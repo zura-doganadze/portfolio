@@ -16,6 +16,8 @@
     --header-text-color: #00FFF5;
     --section-text-color:#00FFF5;
     --third-section-color:#FFFFFF;
+    --scrolltop-color: #FFFFFF;
+    --button-text-color:#FFFFFF;
 }
 .conteiner {
     max-width: 1440px;
@@ -36,14 +38,21 @@ a {
 }
 button {
     font-family: 'Nunito-Regular400', sans-serif;
-    color: #FFFFFF;
+    font-size: 18px;
+    line-height: 25px;
+    color: var(--button-text-color);
     background: #00FFF5;
     border-radius: 30px;
     padding: 12px 43px;
     cursor: pointer;
     display: flex;
     text-transform: capitalize;
-
+    border: none;
+}
+.button:hover {
+    color: black;
+    text-shadow: 2px 0px 20px #00fff5;
+    transform: scale(1.1);
 }
 .section-button {
     display: flex;
@@ -235,7 +244,7 @@ html {
     scroll-behavior: smooth;
 }
 .to-top {
-    background: wheat;
+    background: var(--scrolltop-color);
     position: fixed;
     bottom: 16px;
     right: 32px;
@@ -293,8 +302,8 @@ html {
     border: 1px dashed #0066FF;
     border-radius: 30px;
     padding: 39px 36px;
-    max-width: 280px;
-    max-height: 300px;
+    max-width: 360px;
+    max-height: 370px;
 }
 .projact-imgs { 
     transition: 0.5s;
@@ -376,13 +385,190 @@ html {
 
 
 
+
+
+
+
+
+
+
+
+/* experience section */
+.experience-conteiner {
+    padding: 40px 0px 150px 0px;
+}
+.experience-wrapper {
+    display: flex;
+    align-items: center;
+    margin-bottom: 80px;
+}
+.study-time-conteiner {
+    color: var(--third-section-color);
+    transform: rotate(-90deg);
+    font-size: 20px;
+    font-family: 'Nunito-Regular400', sans-serif;
+    white-space: nowrap;
+}
+.study-details-conteiner {
+    display: flex;
+    align-items: center;
+    border: 1px dashed #0066FF;
+    border-radius: 30px;
+    padding: 30px 63px 16px 54px;
+}
+
+.study-title-conteiner {
+    max-width: 720px;
+    width: 100%;
+    display: inline-block;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 30px;
+    color: var(--third-section-color);
+    font-family: 'Nunito-ExtraBold800', sans-serif;
+    padding-right: 20px;
+}
+
+.study-title-conteiner *:nth-child(2) {
+    display: inline-block;
+    margin-top: 22px;
+}
+
+.study-text-conteiner p {
+    font-family: 'Nunito-Regular400', sans-serif;
+    border: 1px dashed blue;
+    color: var(--third-section-color);
+    font-size: 16px;
+    line-height: 22px;
+    border: none;
+}
+.study-text-conteiner ul :first-child {
+    padding-bottom: 19px;
+}
+.study-text-conteiner  {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+.study-text-conteiner button {
+    font-size: 16px;
+    line-height: 22px;
+    color: var(--third-section-color);
+    font-family: 'Nunito-Regular400', sans-serif;
+    border: none;
+    background: none;
+    padding-top: 19px;
+    cursor: pointer;
+    text-transform: capitalize;
+}
+.study-text-conteiner button:hover {
+    text-shadow: 2px 0px 20px #00fff5;
+    transform: scale(1.1);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* contact-section */
+.contact-span-conteiner {
+    padding: 52px 0px 72px;
+    text-align: center;
+    color: var(--third-section-color);
+    display: flex;
+    flex-direction: column;
+}
+.contact-span-conteiner :first-child {
+    font-family: 'Nunito-ExtraBold800', sans-serif;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 38px;
+}
+.contact-span-conteiner :nth-child(2) {
+    font-family: 'Nunito-ExtraBold800', sans-serif;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 30px;
+    padding-top: 24px;
+}
+.contact-section-wrapper {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 64px;
+}
+.contact-section-conteiner {
+    border: 1px dashed #0066FF;
+    border-radius: 30px;
+    padding: 53px 32px;
+}
+.contact-wrapper *:nth-child(2) {
+    padding-top: 23px;
+}
+.contact-wrapper a {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 27px;
+    color: var(--third-section-color);
+    font-family: 'Nunito-Medium500', sans-serif;
+    margin-left: 30px;
+}
+.contact-icon-conteiner {
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 35px;
+}
+.macbook-img {
+    max-width: 495px;
+    width: 100%;
+}
+.macbook-wrapper {
+    max-width: 495px;
+    width: 100%;
+    margin-left: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 @media (max-width: 1040px) {
-    
+    button {
+        border-radius: 25px;
+        padding: 12px 33px;
+        font-size: 16px;
+        line-height: 19px;
+    }
+    .title {
+        font-size: 22px;
+    }
     .resume-conteiner {
         display: flex;
         justify-content: center;
         align-items: center;
-        
     }
     .hamburger {
       display: inline-block;
@@ -460,8 +646,8 @@ html {
     .work-img-conteiner {
         border-radius: 15px;
         padding: 29px 26px;
-        max-width: 200px;
-        max-height: 220px;
+        max-width: 300px;
+        max-height: 250px;
     }
     .projact-imgs { 
         border-radius: 10px;
@@ -472,17 +658,67 @@ html {
         padding: 10px 10px;
         font-weight: 400;
     }
+    /* experience */
+
+    .study-details-conteiner {
+        padding: 40px 33px 16px 34px;
+    }
+    .study-title-conteiner {
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 30px;
+    }
+    .study-text-conteiner p {
+        font-size: 14px;
+        line-height: 22px;
+    }
+    .study-time-conteiner {
+        font-size: 18px;
+    }
+    
+    /* contact */
+    .contact-span-conteiner :first-child {
+        font-size: 22px;
+    }
+    .contact-span-conteiner :nth-child(2) {
+        font-size: 18px;
+    }
+    .contact-section-conteiner {
+        border-radius: 20px;
+        padding: 33px 22px;
+    }
+    .contact-wrapper a {
+        font-size: 16px;
+        line-height: 20px;
+        margin-left: 25px;
+    }
+    .macbook-wrapper {
+        max-width: 395px;
+    }
+
 }
 
 
 @media (max-width: 800px) {
-    /* header */
-    .header-portfolio-conteiner ul a {
-        font-size: 26px;
+
+    button {
+        border-radius: 20px;
+        padding: 10px 23px;
+        font-size: 14px;
+        line-height: 16px;
     }
     .title {
+        font-size: 20px;
+    }
+    /* header */
+    .header-portfolio-conteiner ul a {
         font-size: 24px;
     }
+    .resume-conteiner a {
+        font-size: 14px;
+
+    }
+    
 
 
 
@@ -510,6 +746,62 @@ html {
         font-size: 9px;
         line-height: 12px;
         padding: 10px 10px;
+    }
+
+
+
+
+    /* experience */
+    .study-details-conteiner {
+        padding: 40px 33px 16px 34px;
+    }
+    .study-title-conteiner {
+        font-weight: 700;
+        font-size: 12px;
+        line-height: 14px;
+    }
+    .study-text-conteiner p {
+        font-size: 10px;
+        line-height: 12px;
+    }
+    .study-time-conteiner {
+        font-size: 12px;
+    }
+    .study-text-conteiner button {
+        font-size: 10px;
+        line-height: 12px;
+        padding-top: 10px;
+    }
+    .to-top {
+        right: 32px;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        font-size: 32px;
+    }
+
+
+
+
+    
+    /* contact */
+    .contact-span-conteiner :first-child {
+        font-size: 18px;
+    }
+    .contact-span-conteiner :nth-child(2) {
+        font-size: 14px;
+    }
+    .contact-section-conteiner {
+        border-radius: 20px;
+        padding: 23px 12px;
+    }
+    .contact-wrapper a {
+        font-size: 12px;
+        line-height: 20px;
+        margin-left: 20px;
+    }
+    .macbook-wrapper {
+        max-width: 335px;
     }
 
 }
