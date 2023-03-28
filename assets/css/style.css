@@ -36,7 +36,7 @@ a {
     color: var(--header-text-color);
     text-align: center;
 }
-button {
+.section-main-button {
     font-family: 'Nunito-Regular400', sans-serif;
     font-size: 18px;
     line-height: 25px;
@@ -49,7 +49,7 @@ button {
     text-transform: capitalize;
     border: none;
 }
-.button:hover {
+.section-main-button:hover {
     color: black;
     text-shadow: 2px 0px 20px #00fff5;
     transform: scale(1.1);
@@ -58,7 +58,24 @@ button {
     display: flex;
     justify-content: center;
 }
-
+.all-projacts-pages-button {
+    font-family: 'Nunito-Regular400', sans-serif;
+    font-size: 18px;
+    line-height: 25px;
+    color: var(--button-text-color);
+    background: #00FFF5;
+    border-radius: 30px;
+    padding: 12px 63px;
+    cursor: pointer;
+    display: flex;
+    text-transform: capitalize;
+    border: none;
+}
+.all-projacts-pages-button:hover {
+    color: black;
+    text-shadow: 2px 0px 20px #00fff5;
+    transform: scale(1.1);
+}
 body {
     background: #03102C;
 }
@@ -293,8 +310,9 @@ html {
 .work-section-img-wrapper {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1 fr);
     row-gap: 50px;
-    column-gap: 60px;
+    column-gap: 70px;
     padding: 40px 0px 60px 0px;
 }
 .work-img-conteiner {
@@ -487,41 +505,41 @@ html {
 
 
 /* contact-section */
-.contact-span-conteiner {
+.footer-span-conteiner {
     padding: 52px 0px 72px;
     text-align: center;
     color: var(--third-section-color);
     display: flex;
     flex-direction: column;
 }
-.contact-span-conteiner :first-child {
+.footer-span-conteiner :first-child {
     font-family: 'Nunito-ExtraBold800', sans-serif;
     font-weight: 700;
     font-size: 28px;
     line-height: 38px;
 }
-.contact-span-conteiner :nth-child(2) {
+.footer-span-conteiner :nth-child(2) {
     font-family: 'Nunito-ExtraBold800', sans-serif;
     font-weight: 700;
     font-size: 22px;
     line-height: 30px;
     padding-top: 24px;
 }
-.contact-section-wrapper {
+.footer-main-wrapper {
     display: flex;
     justify-content: space-around;
     align-items: center;
     margin-bottom: 64px;
 }
-.contact-section-conteiner {
+.footer-main-conteiner {
     border: 1px dashed #0066FF;
     border-radius: 30px;
     padding: 53px 32px;
 }
-.contact-wrapper *:nth-child(2) {
+.footer-contact-wrapper *:nth-child(2) {
     padding-top: 23px;
 }
-.contact-wrapper a {
+.footer-contact-wrapper a {
     font-weight: 600;
     font-size: 20px;
     line-height: 27px;
@@ -549,6 +567,70 @@ html {
 
 
 
+/* all projects */
+.all-projacts-section{
+    margin-top: 160px;
+}
+.all-projects-wrapper {
+   margin: 70px 0px 200px 20px;
+}
+.projects-conteiner {
+    display: flex;
+    column-gap: 122px;
+    margin-bottom: 60px;
+}
+.projects-conteiner img {
+    max-width: 300px;
+    max-height: 300px;
+    border-radius: 30px;
+}
+.projects-conteiner h5 {
+    font-family: 'Nunito-ExtraBold800', sans-serif;
+    color: var(--section-text-color);
+    font-weight: 800;
+    font-size: 30px;
+    line-height: 41px
+}
+.projects-conteiner span {
+    display: inline-block;
+    font-family: 'Nunito-ExtraBold800', sans-serif;
+    color: var(--section-text-color);
+    font-weight: 800;
+    font-size: 20px;
+    line-height: 27px;
+    margin: 15px 0px 25px 0px;
+}
+.projects-conteiner p {
+    font-family: 'Nunito-ExtraBold800', sans-serif;
+    color: var(--section-text-color);
+    font-weight: 800;
+    font-size: 20px;
+    line-height: 27px;
+    text-transform: uppercase;
+}
+.project-details-conteiner {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -556,6 +638,7 @@ html {
 
 
 @media (max-width: 1040px) {
+
     button {
         border-radius: 25px;
         padding: 12px 33px;
@@ -579,19 +662,19 @@ html {
       flex-direction: column;
       justify-content: flex-start; */
     }
-    .hamburger.active .line:nth-child(2) {
+    .hamburger.burger-active .line:nth-child(2) {
       opacity: 0;
     }
-    .hamburger.active .line:nth-child(1) {
+    .hamburger.burger-active .line:nth-child(1) {
       transform: translateY(8px) rotate(45deg);
     }
-    .hamburger.active .line:nth-child(3) {
+    .hamburger.burger-active .line:nth-child(3) {
       transform: translateY(-8px) rotate(-45deg);
     }
     .header-nav-li-conteiner {
       position: fixed;
       right: -100%;
-      top: 100px;
+      top: 120px;
       background-color:#FFFFFF;
       width: 200px;
       border-radius: 8px 0px 0px 8px;
@@ -603,7 +686,7 @@ html {
       flex-direction: column;
       row-gap: 12px;
     }
-    .header-nav-li-conteiner.active {
+    .header-nav-li-conteiner.menu-active {
       right: 0;
     }
     
@@ -677,17 +760,17 @@ html {
     }
     
     /* contact */
-    .contact-span-conteiner :first-child {
+    .footer-span-conteiner :first-child {
         font-size: 22px;
     }
-    .contact-span-conteiner :nth-child(2) {
+    .footer-span-conteiner :nth-child(2) {
         font-size: 18px;
     }
-    .contact-section-conteiner {
+    .footer-main-conteiner {
         border-radius: 20px;
         padding: 33px 22px;
     }
-    .contact-wrapper a {
+    .footer-contact-wrapper a {
         font-size: 16px;
         line-height: 20px;
         margin-left: 25px;
@@ -728,18 +811,26 @@ html {
 
 
     /* work */
-
+    .work-section-img-wrapper {
+        display: grid;
+        justify-items: center;
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 50px;
+        column-gap: 70px;
+        padding: 40px 0px 60px 0px;
+    }
     .work-img-conteiner {
         border-radius: 10px;
         padding: 19px 16px;
         max-width: 150px;
         max-height: 170px;
     }
+    .work-img-conteiner {
+        max-width: 300px;
+        max-height: 260px;
+    }
     .projact-imgs { 
         border-radius: 8px;
-    }
-    .see-full-project-conteiner {
-        width: 84px;
     }
     .see-full-project-conteiner a {
         border-radius: 12px;
@@ -747,6 +838,8 @@ html {
         line-height: 12px;
         padding: 10px 10px;
     }
+
+
 
 
 
@@ -801,7 +894,13 @@ html {
         margin-left: 20px;
     }
     .macbook-wrapper {
-        max-width: 335px;
+        max-width: 395px;
+        margin-left: 0px;
+    }
+    .footer-main-wrapper {
+        display: flex;
+        flex-direction: column-reverse;
+        row-gap: 30px;
     }
 
 }
