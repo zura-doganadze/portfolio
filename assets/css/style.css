@@ -11,7 +11,9 @@
     src: url(../fonts/Nunito-ExtraBold800.ttf);
 }
 :root {
+    --body-background-color: #03102C;
     --header-text-color: #00FFF5;
+    --product-descriprion-color: #FFFFFF;
     --section-text-color:#00FFF5;
     --third-section-color:#FFFFFF;
     --scrolltop-color: #FFFFFF;
@@ -72,7 +74,7 @@ a {
     transform: scale(1.1);
 }
 body {
-    background: #03102C;
+    background: var(--body-background-color);
 }
 .header-wrapper {
     display: flex;
@@ -108,9 +110,10 @@ body {
     text-shadow: 2px 0px 20px #00fff5;
     transform: scale(1.1);
 }
-.resume-conteiner a {
+.resume-conteiner a button {
     font-family: 'Nunito-ExtraBold800', sans-serif;
     color: var(--header-text-color);
+    background: var(--body-background-color);
     font-weight: 700;
     font-size: 16px;
     text-transform: uppercase;
@@ -119,7 +122,7 @@ body {
     border-radius: 30px;
     padding: 15px 30px;
 }
-.resume-conteiner a:hover {
+.resume-conteiner a button:hover {
     text-shadow: 2px 0px 20px #00fff5;
     transform: scale(1.1);
 }
@@ -145,21 +148,26 @@ body {
     display: flex;
 }
 .profile-img-conteiner {
+    margin-top: 20px;
     border: 1px dashed #0066FF;
     border-radius: 30px;
-    max-height: 450px;
+    max-height: 305px;
+    max-width: 265px;
 }
 .profile-img-conteiner img {
-    border-radius: 30px;
+    border-radius: 55px;
     padding: 30px;
     transition: 0.5s;
     transition-timing-function: ease-out;
+    max-width: 100%;
+    max-height: 100%;
+
 }
 .profile-img-conteiner img:hover {
-    transform: scale(1.1);
+    transform: scale(1.2);
 }
 .about-me-text-conteiner {
-    padding: 126px 104px 0px 84px;
+    padding: 100px 104px 0px 84px;
     position: relative;
 }
 .about-me-text-conteiner span {
@@ -167,6 +175,8 @@ body {
     color: var(--section-text-color);
     font-weight: 500;
     font-size: 24px;
+    display: inline-block;
+    padding-bottom: 50px;
     text-transform: capitalize;
 }
 .about-me-text-conteiner p {
@@ -174,8 +184,11 @@ body {
     color: var(--section-text-color);
     font-weight: 400;
     font-size: 20px;
-    padding: 50px 0px;
+    padding: 3px 0;
     text-transform: initial;
+}
+.about-me-text-conteiner button {
+    margin-top: 50px;
 }
 .icon-contener {
     display: flex;
@@ -492,7 +505,7 @@ footer {
 }
 .projects-conteiner p {
     font-family: 'Nunito-ExtraBold800', sans-serif;
-    color: var(--section-text-color);
+    color: var(--product-descriprion-color);
     font-weight: 800;
     font-size: 20px;
 }
@@ -508,6 +521,63 @@ footer {
 .project-details-conteiner:last-child a {
     display: inline-block;
 }
+/* modal */
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    padding-top: 15%;  
+    left: 0;
+    top: 0;
+    width: 100%;  
+    height: 100%; 
+    overflow: auto;
+}
+.modal-content {
+background: #490cf0;
+margin: auto;
+padding: 20px 20px 50px 20px;
+border: 1px solid #888;
+border-radius: 9px;
+width: 50%;
+}
+.close {
+color: #aaaaaa;
+float: right;
+font-size: 38px;
+font-weight: bold;
+}
+.close:hover,
+.close:focus {
+color: #000;
+text-decoration: none;
+cursor: pointer;
+}
+.modal-content h6 {
+    display: flex;
+    justify-content: center;
+    font-family: 'Nunito-ExtraBold800', sans-serif;
+    color: var(--third-section-color);
+    font-weight: 800;
+    font-size: 18px;
+    text-transform: uppercase;
+    margin: 30px 0;
+}
+.modal-content div {
+    display: flex;
+    align-items: center;
+    margin-left: 40%;
+    margin-top: 15px;
+}
+.modal-content div a {
+    margin-right: 15px;
+    font-family: 'Nunito-Medium500', sans-serif;
+    color: var(--third-section-color);
+    font-weight: 600;
+    font-size: 18px;
+    text-transform: uppercase;
+
+}
 @media (max-width: 1040px) {
 
     .section-main-button {
@@ -522,6 +592,17 @@ footer {
         display: flex;
         justify-content: center;
         align-items: center;
+        position: fixed;
+        right: -100%;
+        top: 120px;
+    }
+    .resume-conteiner a button{
+        background: #FFFFFF;
+    }
+    .resume-conteiner.resume-active {
+        right: 0;
+        left: 0%;
+        bottom: 23%;
     }
     .hamburger {
       display: inline-block;
@@ -536,12 +617,12 @@ footer {
       transform: translateY(-8px) rotate(-45deg);
     }
     .header-nav-li-conteiner {
+        background: #FFFFFF;
       position: fixed;
       right: -100%;
       top: 120px;
-      background-color:#FFFFFF;
-      width: 200px;
-      border-radius: 8px 0px 0px 8px;
+      width: 100%;
+      height: 250px;
       text-align: center;
       transition: 0.3s;
       padding: 50px 0px 40px 0px;
@@ -555,7 +636,12 @@ footer {
     }
     /* about me */
     .profile-img-conteiner {
-        max-width: 390px;   
+        max-width: 265px;  
+        max-height: 306px; 
+    }
+    .profile-img-conteiner img {
+        width: 100%;
+        height: 100%;
     }
     .about-me-section-wrapper {
         display: flex;
@@ -567,7 +653,7 @@ footer {
         display: none;
     }
     .about-me-text-conteiner {
-        padding: 100px 104px 0px 84px;
+        padding: 90px 104px 0px 84px;
     }
     .icon-contener {
         display: flex;
@@ -667,21 +753,15 @@ footer {
     .header-portfolio-conteiner ul a {
         font-size: 24px;
     }
-    .resume-conteiner a {
+    .resume-conteiner a button {
         font-size: 14px;
     }
     /* about me */
     .profile-img-conteiner {
-        max-width: 300px;   
-    }
-    .profile-img-conteiner img {
-        max-width: 300px;  
+        max-width: 260px;   
     }
     .about-me-text-conteiner {
         padding: 80px 54px 0px 44px;
-    }
-    .about-me-text-conteiner p {
-        padding: 30px 0;
     }
     /* work */
     .work-section-img-wrapper {
@@ -792,7 +872,13 @@ footer {
         border-radius: 25px;
         padding: 12px 30px;
     }
-
+    /* modal */
+    .modal-content {
+        width: 70%;
+    }
+    .modal-content div {
+        margin-left: 30%;
+    }
 }
 @media (max-width: 550px) {
 
@@ -813,7 +899,7 @@ footer {
     }
     .header-nav-li-conteiner {
         padding: 40px 0px 30px 0px;
-        width: 180px;
+        width: 100%;
     }
     .about-me-text-conteiner span {
         font-size: 18px;
@@ -834,9 +920,6 @@ footer {
     }
     .about-me-text-conteiner {
         padding: 40px 30px 0px 30px;
-    }
-    .about-me-text-conteiner p {
-        padding: 30px 0;
     }
     /* work */
     .work-section-img-wrapper {
@@ -883,7 +966,7 @@ footer {
         font-size: 14px;
     }
     .footer-main-conteiner {
-        padding: 23px 12px 20px 0px;
+        padding: 23px 12px 20px 20px;
     }
     .footer-contact-wrapper *:nth-child(2) {
         font-size: 13px;
@@ -913,5 +996,9 @@ footer {
         font-size: 13px;
         border-radius: 25px;
         padding: 12px 30px;
+    }
+    /* modal */
+    .modal-content div {
+        margin-left: 10%;
     }
 }
